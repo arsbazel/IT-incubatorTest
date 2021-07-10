@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+	<style type="text/css">
+		.search__container {
+			position: relative;
+			margin: 0 auto;
+			width: auto;
+			max-width: 700px;
+			padding-top: 100px;
+		}
+
+		.search__inner {
+			display: flex;
+			border: 1px solid rgb(255 0 0 / 70%);
+			box-shadow: none;
+			border-radius: 30px;
+			z-index: 3;
+			height: 60px;
+			margin: 0 auto;
+		}
+
+		.search__inner:hover {
+			box-shadow: 0 1px 6px rgb(255 0 0 / 50%);
+			border-color: rgba(223, 225, 229, 0);
+		}
+
+		.search__input {
+			flex: 1;
+			display: flex;
+			padding: 5px 10px 5px 30px;
+		}
+
+		.search__input input {
+			background-color: transparent;
+			border: none;
+			margin: 0;
+			padding: 0;
+			color: rgba(0, 0, 0, .87);
+			word-wrap: break-word;
+			outline: none;
+			display: flex;
+			flex: 100%;
+			-webkit-tap-highlight-color: transparent;
+			height: 50px;
+			font-size: 20px;
+		}
+
+		.search__button {
+			display: flex;
+			justify-content: center;
+			padding-top: 20px;
+		}
+
+		.search__button button {
+			min-width: 80px;
+			text-align: center;
+			cursor: pointer;
+			font-size: 18px;
+			margin: 15px 0;
+			height: 40px;
+			background-color: rgb(0 245 0 / 100%);
+			border-radius: 5px;
+			padding: 0 20px;
+			border: none;
+			border: 1px solid rgb(0 245 0 / 100%);
+		}
+
+		.search__button button:hover {
+			box-sizing: border-box;
+			box-shadow: 0 1px 4px rgb(255 0 0 / 50%);
+			border: 1px solid rgb(0 230 0 / 100%);
+
+		}
+	</style>
+</head>
+
+<body>
+	<form>
+		<div class="search__container">
+			<div class="search__inner">
+				<div class="search__input">
+					<input class="input" placeholder="Введите поисковый запрос" type="text">
+				</div>
+			</div>
+			<div class="search__button">
+				<button class="button" type='button'>Найти</button>
+			</div>
+	</form>
+	</div>
+	<script>
+
+		let input = document.querySelector(".input");
+		let button = document.querySelector(".button");
+		let arr = [
+			{ name: "John", age: 30 },
+			{ name: "Bill", age: 25 },
+			{ name: "Linda", age: 28 },
+		];
+
+
+		let vinaigrette = function () {
+			if (input.value === "google") {
+				setTimeout(() => {
+					alert("Yandex круче. Но это не точно");
+					alert(arr[0].name);
+				}, 3000)
+			} else {
+				alert(input.value);
+				alert(arr[0].name);
+			}
+		}
+
+		button.addEventListener("click", vinaigrette);
+
+
+		let superSum = function (a, b) {
+			return a + b;
+		};
+
+		let numArr = [15, 10, 3, 8, 1, 12, 6, 2, 280, 152];
+		let [max, min] = [numArr[0], numArr[0]];
+		for (let i = 0; i < numArr.length; i++) {
+			const element = numArr[i];
+			if (element > max) {
+				max = element
+			} else if (element < min) {
+				min = element
+			}
+		}
+		console.log(max, min);
+
+		let a = "XXX";
+		let b = "YYY";
+		[a, b] = [b, a];
+		console.log(a);
+		console.log(b);
+
+		let findMax = function (arr) {
+			let max = arr[0];
+			for (let i = 0; i < arr.length; i++) {
+				const el = arr[i];
+				if (el > max) {
+					max = el
+				}
+			}
+			return max;
+		}
+		console.log(findMax(numArr));
+
+	</script>
+</body>
+
+</html>
